@@ -4,7 +4,7 @@ export default {
     entry: [
         'webpack/hot/dev-server',
         'webpack-dev-server/client?http://0.0.0.0:5000',
-        './src/main.js'
+        './src/main.jsx'
     ],
 
     devtool: "eval-source-map",
@@ -30,7 +30,7 @@ export default {
     module: {
         loaders: [
             {
-                test: /\.js?$/,
+                test: /\.jsx?$/,
                 loader: 'babel?cacheDirectory',
                 exclude: /node_modules/
             },
