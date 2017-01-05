@@ -34,7 +34,7 @@ export default {
                 loader: 'babel?cacheDirectory',
                 exclude: /node_modules/
             },
-            { test: /\.css$/, loaders: ["style", "css?sourceMap"] },
+            { test: /\.s?css$/, loaders: ["style", "css?sourceMap", "sass?sourceMap"] },
             {test: /\.png$/, loader: 'url?limit=8192&mimetype=image/png'},
             {test: /\.jpe?g$/, loader: 'url?limit=8192&mimetype=image/jpg'},
             {test: /\.gif$/, loader: 'url?limit=8192&mimetype=image/gif'},

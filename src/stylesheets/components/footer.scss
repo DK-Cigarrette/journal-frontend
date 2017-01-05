@@ -1,0 +1,10 @@
+.app-footer{
+  width:100%;
+  height:$footerHeight;
+  background: {
+    color:$lightGray;
+  };
+  position:absolute;
+  left:0;
+  bottom:0;
+}

@@ -1,0 +1,11 @@
+.app-header {
+  color: $white;
+  width:100%;
+  height: $toolBarHeight;
+  top:0;
+  left:0;
+  position: fixed;
+  background: {
+    color: $pink;
+  }
+}

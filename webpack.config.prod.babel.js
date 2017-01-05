@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 
 export default {
-    entry: ['./src/main.js'],
+    entry: ['./src/main.jsx'],
 
     output: {
         path: `${__dirname}/dist`,
@@ -16,11 +16,11 @@ export default {
     module: {
         loaders: [
             {
-                test: /\.js?$/,
+                test: /\.jsx?$/,
                 loader: 'babel?cacheDirectory',
                 exclude: /node_modules/
             },
-            { test: /\.css$/, loaders: ["style", "css?sourceMap"] },
+            { test: /\.s?css$/, loaders: ["style", "css?sourceMap", "sass?sourceMap"] },
             {test: /\.png$/, loader: 'url?limit=8192&mimetype=image/png'},
             {test: /\.jpe?g$/, loader: 'url?limit=8192&mimetype=image/jpg'},
             {test: /\.gif$/, loader: 'url?limit=8192&mimetype=image/gif'},
