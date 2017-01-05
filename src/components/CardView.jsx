@@ -2,30 +2,46 @@ import React, { Component } from 'react'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
+const userInfo = {
+    username: 'zach.jung',
+    userEmail: 'doublejnu@gmail.com',
+    userAvatar: 'http://pixel.nymag.com/imgs/daily/vulture/2016/01/22/22-avatar.w529.h529.jpg',
+};
+
+const mockDoc = {
+    title: '알밥정식 vs 돈까스정식',
+    subtitle: '신기소 메뉴 결정전',
+    content: '뭘먹든 내일도 신기소 고고',
+    imageSrc: 'http://mblogthumb4.phinf.naver.net/20141105_191/kini55_1415149249704gnXrm_JPEG/2.jpg?type=w2'
+};
+
+const cardStyle = {
+    width: '90%',
+    margin:'0 auto 50px'
+};
+
 class CardView extends Component {
     render(){
+        let doc = this.props.doc || mockDoc;
+
         return (
-            <Card>
+            <Card style={ cardStyle }>
                 <CardHeader
-                    title="URL Avatar"
-                    subtitle="Subtitle"
-                    avatar="images/jsa-128.jpg"
+                    title={userInfo.username}
+                    subtitle={userInfo.userEmail}
+                    avatar={userInfo.userAvatar}
                 />
                 <CardMedia
-                    overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
+                    overlay={<CardTitle title={doc.title} subtitle={doc.subtitle} />}
                 >
-                    <img src="images/nature-600-337.jpg" />
+                    <img src={doc.imageSrc} />
                 </CardMedia>
-                <CardTitle title="Card title" subtitle="Card subtitle" />
                 <CardText>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                    Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-                    Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+                    {doc.content}
                 </CardText>
-                <CardActions>
-                    <FlatButton label="Action1" />
-                    <FlatButton label="Action2" />
+                <CardActions style={{textAlign:'right'}}>
+                    <FlatButton label="수정" />
+                    <FlatButton label="삭제" />
                 </CardActions>
             </Card>
         );

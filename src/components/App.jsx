@@ -23,10 +23,7 @@ class App extends Component {
         return (
             <MuiThemeProvider muiTheme={getMuiTheme()}>
                 <div className="app-wrap">
-                    <header className="app-header">
-                        <h1 className="app-tit">신기소</h1>
-                        <Header />
-                    </header>
+                    <Header />
                     <main className="app-main">
                         <h2 className="screen_out">Main</h2>
                         {this.props.children}

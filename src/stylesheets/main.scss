@@ -17,7 +17,7 @@ $footerHeight: 50px;
   }
   position:relative;
   margin: {
-    top: $toolBarHeight;
+    top: $toolBarHeight + 20px;
   }
   padding: {
     bottom: $footerHeight;

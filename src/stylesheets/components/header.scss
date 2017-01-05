@@ -8,4 +8,25 @@
   background: {
     color: $pink;
   }
+  z-index: 10;
+
+  .app-tit {
+    width:80px;
+    padding:12px 0 0 15px;
+  }
+
+  .link-home {
+    font-weight:bold;
+    color: $white;
+    height:25px;
+    display:block;
+  }
+  
+  .tit-text{
+    display:block;
+    float:left;
+    font-size:12px;
+    padding:8px 0 0 4px;
+    //vertical-align: middle;
+  }
 }
