@@ -1,21 +1,25 @@
-$white:#f9f9f9;
-$yellow:#FFEB3B;
-$blue:#1A237E;
-$pink:#E91E63;
-$lightGray:#F5F5F5;
+$white: #f9f9f9;
+$yellow: #FFEB3B;
+$blue: #1A237E;
+$pink: #E91E63;
+$lightGray: #F5F5F5;
 
+$toolBarHeight: 50px;
+$footerHeight: 50px;
 
-$toolBarHeight:50px;
-$footerHeight:50px;
-
+@import 'modules/utils';
 @import 'modules/reset';
 @import 'components/header';
 @import 'components/footer';
 
 #App {
-  margin:{
-    top: $toolBarHeight;
-    };
+  background:{
   }
-
-
+  position:relative;
+  margin: {
+    top: $toolBarHeight;
+  }
+  padding: {
+    bottom: $footerHeight;
+  }
+}
