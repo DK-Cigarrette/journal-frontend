@@ -10,7 +10,6 @@ const initialState = {
     auth: false,
     username: '',
     profileImg: '',
-
 };
 
 class App extends Component {
