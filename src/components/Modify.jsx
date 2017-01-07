@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { render } from 'react-dom';
+import ModifyForm from './ModifyForm.jsx'
 
 let {
     form,
@@ -12,37 +12,28 @@ class Modify extends Component {
         super(props);
 
         this.state = {
-            data: {}
+            data: []
         };
     }
 
     componentDidMount() {
         console.log("!!!!!!!!!!!!");
-        fetch("http://localhost:5001/editJournal?id=587064712736323e86d0a423", {
-            method: "post",
-            headers: {'Access-Control-Allow-Origin':'*', 'Content-Type': 'multipart/form-data'}})
+        fetch("http://localhost:3000/editJournal?id=587064712736323e86d0a423", {method: "post"})
             .then(response => response.json())
             .then(json => {
                 console.log(json);
-                this.setState({ data: JSON.stringify(json)});
+                this.setState({...this.state, data: json});
             });
     }
 
     render(){
-        console.log("????????????");
-        console.log(this.state.data[0]);
-        // let data = JSON.stringify(this.state.data).replace(/\\/gi, '');
-        // console.log(data);
-        // console.log(data.content);
+        if(this.state.data.length == 0){
+            return(<div>
+                <h1>data fetching..</h1>
+            </div>);
+        }
         return(
-            form({action:"http://localhost:5001/writePosts", method:"post", encType:"multipart/form-data"},
-                input({type:"hidden", name:"pageType", value:"update"}),
-                input({type:"hidden", name:"id", value:"587064712736323e86d0a423"}),
-                input({type:"hidden", name:"weather", value:"흐림"}),
-                input({type:"file", name:"imagePath"}),
-                textarea({name:"content"}),
-                input({type:"submit", value:"수정"}),
-            )
+            <ModifyForm data={this.state.data[0]}/>
         );
     }
 }
