@@ -21,6 +21,7 @@ const cardStyle = {
 };
 
 class CardView extends Component {
+
     render(){
         let doc = this.props.doc || mockDoc;
 

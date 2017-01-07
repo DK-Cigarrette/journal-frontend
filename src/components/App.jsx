@@ -18,14 +18,25 @@ class App extends Component {
         this.state = initialState;
     }
 
+    updateState(newState){
+        let prevState = this.state;
+        this.setState({...prevState, ...newState}); // 중요!! state 업데이트를 위해서 이렇게 씀
+    }
+
     render(){
+        // 자식 컴포넌트에 App을 가리키는 업데이트 함수 전달하기 위해 오브젝트 복사
+        let children = React.cloneElement(this.props.children, {
+            mainState: this.state,
+            updateState: this.updateState.bind(this)
+        });
+
         return (
             <MuiThemeProvider muiTheme={getMuiTheme()}>
                 <div className="app-wrap">
                     <Header />
                     <main className="app-main">
                         <h2 className="screen_out">Main</h2>
-                        {this.props.children}
+                        {children}
                     </main>
                     <footer className="app-footer">
                         <h2 className="screen_out">Footer</h2>
