@@ -24,7 +24,7 @@ class Header extends Component {
                     </Link>
                 </h1>
                 <h1>
-                    <Link to="write" class="link-write" style={writeStyle}>글쓰기
+                    <Link to="write" className="link-write" style={writeStyle}>글쓰기
                     </Link>
                 </h1>
             </header>
