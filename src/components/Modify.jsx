@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
 import ModifyForm from './ModifyForm.jsx'
 
-let {
-    form,
-    input,
-    textarea
-} = React.DOM;
-
 class Modify extends Component {
     constructor(props) {
         super(props);
@@ -17,8 +11,7 @@ class Modify extends Component {
     }
 
     componentDidMount() {
-        console.log("!!!!!!!!!!!!");
-        fetch("http://localhost:3000/editJournal?id=587064712736323e86d0a423", {method: "post"})
+        fetch("http://localhost:5001/editJournal?id=" + this.props.params.id, {method: "post"})
             .then(response => response.json())
             .then(json => {
                 console.log(json);

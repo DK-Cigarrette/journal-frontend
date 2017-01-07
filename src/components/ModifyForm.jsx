@@ -4,7 +4,8 @@ import { render } from 'react-dom';
 let {
     form,
     input,
-    textarea
+    textarea,
+    img
 } = React.DOM;
 
 export default class ModifyForm extends Component {
@@ -13,10 +14,11 @@ export default class ModifyForm extends Component {
         return (
                 form({action:"http://localhost:5001/writePosts", method:"post", encType:"multipart/form-data"},
                 input({type:"hidden", name:"pageType", value:"update"}),
-                input({type:"hidden", name:"id", value:"587064712736323e86d0a423"}),
-                input({type:"hidden", name:"weather", value:"흐림"}),
-                input({type:"file", name:"imagePath"}),
-                textarea({name:"content"}),
+                input({type:"hidden", name:"id", value:this.props.data._id}),
+                input({type:"hidden", name:"weather", value:this.props.data.weather}),
+                img({src:this.props.data.imagePath}),
+                input({type:"file"}),
+                textarea({name:"content", value:this.props.data.content}),
                 input({type:"submit", value:"수정"}),
         ));
     }
