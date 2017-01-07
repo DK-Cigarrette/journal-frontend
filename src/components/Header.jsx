@@ -8,6 +8,9 @@ let homeBtnStyle = {
 
 class Header extends Component {
     render(){
+        const writeStyle= {
+            float : 'right'
+    };
         return (
             <header className="app-header">
                 <h1 className="app-tit">
@@ -18,6 +21,10 @@ class Header extends Component {
                             height:'25px'
                         }}/>
                         <span className="tit-text">신기소</span>
+                    </Link>
+                </h1>
+                <h1>
+                    <Link to="write" class="link-write" style={writeStyle}>글쓰기
                     </Link>
                 </h1>
             </header>
