@@ -12,24 +12,28 @@ class Modify extends Component {
         super(props);
 
         this.state = {
-            data: []
+            data: {}
         };
     }
 
     componentDidMount() {
         console.log("!!!!!!!!!!!!");
-        fetch("http://localhost:5001/editJournal?id=587064712736323e86d0a423", {method: "post"})
+        fetch("http://localhost:5001/editJournal?id=587064712736323e86d0a423", {
+            method: "post",
+            headers: {'Access-Control-Allow-Origin':'*', 'Content-Type': 'multipart/form-data'}})
             .then(response => response.json())
             .then(json => {
                 console.log(json);
-                this.setState({
-                    data: json,
-                });
+                this.setState({ data: JSON.stringify(json)});
             });
     }
 
     render(){
-        console.log(this.state.data);
+        console.log("????????????");
+        console.log(this.state.data[0]);
+        // let data = JSON.stringify(this.state.data).replace(/\\/gi, '');
+        // console.log(data);
+        // console.log(data.content);
         return(
             form({action:"http://localhost:5001/writePosts", method:"post", encType:"multipart/form-data"},
                 input({type:"hidden", name:"pageType", value:"update"}),
