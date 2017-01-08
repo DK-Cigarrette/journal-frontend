@@ -22,6 +22,10 @@ const cardStyle = {
 
 class CardView extends Component {
 
+    linkToModify(){
+        this.props.router.push('/modify/adasdsad');
+    }
+
     render(){
         let doc = this.props.doc || mockDoc;
 
@@ -41,7 +45,7 @@ class CardView extends Component {
                     {doc.content}
                 </CardText>
                 <CardActions style={{textAlign:'right'}}>
-                    <FlatButton label="수정" />
+                    <FlatButton label="수정" onClick={this.linkToModify.bind(this)}/>
                     <FlatButton label="삭제" />
                 </CardActions>
             </Card>
