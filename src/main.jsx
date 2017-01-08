@@ -14,7 +14,8 @@ render(
         <Route path="/" component={App}>
             <IndexRoute component={CardView} />
             <Route path="/write" component={Write}/>
-            <Route path="modify/:article" component={Modify}/>
+            <Route path="Modify/:id" component={Modify}/>
+            <Route path="delete/:id" component={Modify}/>
             {/*<Route path="login" component={} />*/}
         </Route>
     </Router>)
