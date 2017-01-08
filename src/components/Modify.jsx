@@ -11,7 +11,7 @@ class Modify extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:5001/editJournal?id=" + this.props.params.id, {method: "post"})
+        fetch("http://localhost:3000/editJournal?id=" + this.props.params.id, {method: "post"})
             .then(response => response.json())
             .then(json => {
                 console.log(json);

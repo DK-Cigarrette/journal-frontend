@@ -41,8 +41,9 @@ class CardView extends Component {
                     {doc.content}
                 </CardText>
                 <CardActions style={{textAlign:'right'}}>
+
                     <FlatButton label="수정" />
-                    <FlatButton label="삭제" />
+                    <FlatButton label="삭제" onClick={() => { "http://localhost:3000/delete/5870bc1af7dd410f9f038f08" }}  />
                 </CardActions>
             </Card>
         );
