@@ -40,7 +40,7 @@ const fields = [
 
 
 export default class WriteForm extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             createAt: fields[1].defaultValue,

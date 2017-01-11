@@ -9,7 +9,10 @@ let homeBtnStyle = {
 class Header extends Component {
     render(){
         const writeStyle= {
-            float : 'right'
+            float : 'right',
+            marginTop:'-17px',
+            marginRight:'10px',
+            color : 'white'
     };
         return (
             <header className="app-header">
@@ -20,7 +23,7 @@ class Header extends Component {
                             width:'25px',
                             height:'25px'
                         }}/>
-                        <span className="tit-text">신기소</span>
+                        <span className="tit-text">일기장</span>
                     </Link>
                 </h1>
                 <h1>

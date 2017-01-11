@@ -12,7 +12,7 @@ const cardStyle = {
 };
 
 const noImage = {
-    thumb: 'http://localhost:3000/images/noImage_cards.png',
+    thumb: `${hostURL}/images/noImage_cards.png`,
     avatar: 'http://www.bitrebels.com/wp-content/uploads/2011/02/Original-Facebook-Geek-Profile-Avatar-6.jpg'
 };
 

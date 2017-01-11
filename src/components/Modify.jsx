@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import ModifyForm from './ModifyForm.jsx'
+import React, { Component } from 'react';
+import ModifyForm from './ModifyForm.jsx';
+import {hostURL} from '../consts';
 
 class Modify extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class Modify extends Component {
     }
 
     componentDidMount() {
-        fetch("http://localhost:3000/editJournal?id=" + this.props.params.id, {method: "post"})
+        fetch(`${hostURL}/editJournal?id=` + this.props.params.id, {method: "post"})
             .then(response => response.json())
             .then(json => {
                 console.log(json);

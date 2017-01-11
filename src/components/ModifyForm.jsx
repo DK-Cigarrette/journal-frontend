@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom';
+import {hostURL} from '../consts';
 
 let {
     form,
@@ -12,7 +13,7 @@ export default class ModifyForm extends Component {
     render(){
         console.log(this.props.data);
         return (
-                form({action:"http://localhost:3000/writePosts", method:"post", encType:"multipart/form-data"},
+                form({action:`${hostURL}/editJournal`, method:"post", encType:"multipart/form-data"},
                 input({type:"hidden", name:"pageType", value:"update"}),
                 input({type:"hidden", name:"id", value:this.props.data._id}),
                 input({type:"text", name:"weather", value:this.props.data.weather}),
