@@ -17,7 +17,7 @@ export default class ModifyForm extends Component {
                 input({type:"hidden", name:"pageType", value:"update"}),
                 input({type:"hidden", name:"id", defaultValue:this.props.data._id}),
                 input({type:"text", name:"username", defaultValue:this.props.data.username}),
-                    <select id="weather">
+                    <select id="weather" defaultValue={this.props.data.weather}>
                         <option value="맑음">맑음</option>
                         <option value="비">비</option>
                         <option value="눈">눈</option>

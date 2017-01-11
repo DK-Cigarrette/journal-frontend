@@ -66,9 +66,9 @@ class Cards extends Component {
         });
     }
 
-    render(){
+    render() {
         let doc = this.props.doc;
-
+        console.log(doc);
         return (
             <Card style={ cardStyle } className="cards" ref="card">
                 <CardHeader title={doc.username} subtitle={doc.username} avatar={noImage.avatar}/>

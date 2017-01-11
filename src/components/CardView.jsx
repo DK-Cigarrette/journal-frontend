@@ -9,7 +9,7 @@ class CardView extends Component {
         };
     }
 
-    updateCardList(arr = []){
+    updateCardList(arr = []) {
         this.setState({...this.state, data: arr});
     }
 
