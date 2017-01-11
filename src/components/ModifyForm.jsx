@@ -19,9 +19,9 @@ export default class ModifyForm extends Component {
     render(){
         console.log(this.props.data);
         return (
-                form({action:`${hostURL}/editJournal`, method:"post", encType:"multipart/form-data"},
+                form({action:`${hostURL}/writePosts`, method:"post", encType:"multipart/form-data"},
                 input({type:"hidden", name:"pageType", value:"update"}),
-                input({type:"hidden", name:"id", defaultValue:this.props.data._id}),
+                input({type:"hidden", name:"id", value:this.props.data._id}),
                 input({type:"text", name:"username", defaultValue:this.props.data.username}),
                     <select id="weather" defaultValue={this.props.data.weather}>
                         <option value="맑음">맑음</option>
@@ -32,7 +32,7 @@ export default class ModifyForm extends Component {
                 img({src:convertImgPath(this.props.data.imagePath)}),
                 input({type:"file"}),
                 textarea({name:"content", defaultValue:this.props.data.content}),
-                input({type:"submit", defaultValue:"수정"}),
+                input({type:"submit", value:"수정"}),
         ));
     }
 }
