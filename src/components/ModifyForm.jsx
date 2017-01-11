@@ -9,6 +9,12 @@ let {
     img
 } = React.DOM;
 
+const convertImgPath = (path) => {
+    let n = path.slice(path.indexOf('/uploads') + 1);
+
+    return `${hostURL}/${n}`;
+};
+
 export default class ModifyForm extends Component {
     render(){
         console.log(this.props.data);
@@ -23,7 +29,7 @@ export default class ModifyForm extends Component {
                         <option value="눈">눈</option>
                         <option value="흐림">흐림</option>
                     </select>,
-                img({src:this.props.data.imagePath}),
+                img({src:convertImgPath(this.props.data.imagePath)}),
                 input({type:"file"}),
                 textarea({name:"content", defaultValue:this.props.data.content}),
                 input({type:"submit", defaultValue:"수정"}),
