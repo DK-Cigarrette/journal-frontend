@@ -14,6 +14,7 @@ render(
     (<Router history={browserHistory}>
         <Route path="/" component={App}>
             <IndexRoute component={CardView} />
+            <Route path="/cards" component={CardView}/>
             <Route path="/write" component={Write}/>
             <Route path="writeForm" component={WriteForm}/>{/* 테스트를 위해 임시로 넣음 */}
             <Route path="Modify/:id" component={Modify}/>

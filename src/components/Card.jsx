@@ -45,10 +45,7 @@ class Cards extends Component {
 
             fetch(request).then((res)=>{
                 console.log('Card has been deleted');
-                this.animateBeforeDelete();
-                setTimeout(()=> {
-                    this.props.fetchCardList();
-                }, animationDuration);
+                this.props.fetchCardList();
             }).catch(err => console.log('Failed to delete a card', err));
         }
     }
@@ -68,7 +65,6 @@ class Cards extends Component {
 
     render() {
         let doc = this.props.doc;
-        console.log(doc);
         return (
             <Card style={ cardStyle } className="cards" ref="card">
                 <CardHeader title={doc.username} subtitle={doc.username} avatar={noImage.avatar}/>
@@ -77,7 +73,7 @@ class Cards extends Component {
                 </CardMedia>
                 <CardText>{doc.content}</CardText>
                 <CardActions style={{textAlign:'right'}}>
-                    <FlatButton label="수정" onClick={this.linkToModify.bind(this)}/>
+                    {/*<FlatButton label="수정" onClick={this.linkToModify.bind(this)}/>*/}
                     <FlatButton label="삭제" onClick={this.deleteCard.bind(this)}/>
                 </CardActions>
             </Card>

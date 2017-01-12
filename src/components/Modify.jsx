@@ -12,7 +12,7 @@ class Modify extends Component {
     }
 
     componentDidMount() {
-        fetch(`${hostURL}/editJournal?id=` + this.props.params.id, {method: "post"})
+        fetch(`${hostURL}/api/getCards?_id=${this.props.params.id}`)
             .then(response => response.json())
             .then(json => {
                 console.log(json);

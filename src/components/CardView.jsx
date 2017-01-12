@@ -28,6 +28,12 @@ class CardView extends Component {
         this.fetchCardList();
     }
 
+    componentDidUpdate(){
+        if(this.props.mainState.update){
+            this.fetchCardList().then(() => this.props.updateState({update: false}));
+        }
+    }
+
     renderCards(doc){
         return doc.map((each, idx) => {
            return(<Card key={idx} doc={each} router={this.props.router} _id={idx} fetchCardList={this.fetchCardList.bind(this)}/>);

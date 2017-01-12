@@ -128,13 +128,19 @@ export default class WriteForm extends Component {
             body: data
         });
 
-        fetch(request).then((res)=>{
-            if(res.ok){
-                this.props.router.push('/');
-            }else{
-                throw new Error(res.statusText);
-            }
-        }).catch(err => console.log('Failed to write a post', err));
+        fetch(request)
+            .then((res)=>{
+                console.log(res);
+                if(res.ok){
+                    this.props.updateState({update: true});
+                    this.props.router.push('/');
+                }else{
+                    throw new Error(res.statusText);
+                }
+            })
+            .catch(err => {
+                console.log('Failed to write a post', err);
+            });
     }
 
     handleSubmit(evt){

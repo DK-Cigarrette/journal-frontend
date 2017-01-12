@@ -10,6 +10,7 @@ const initialState = {
     auth: false,
     username: '',
     profileImg: '',
+    update: false
 };
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
     updateState(newState){
         let prevState = this.state;
         this.setState({...prevState, ...newState}); // 중요!! state 업데이트를 위해서 이렇게 씀
+        console.log(this.state);
     }
 
     render(){
@@ -45,6 +47,10 @@ class App extends Component {
                 </div>
             </MuiThemeProvider>
         );
+    }
+
+    componentWillUpdate(){
+
     }
 }
 
